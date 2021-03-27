@@ -10,25 +10,25 @@
         Username (Email Address): <input name="username" type="text" ><br>
         Password: <input name="password" type="password" required><br><br>
         <input type="submit" value="Sign Up"><br><br><br>
-        <a href="login.php">Already a member? Click here to login!</a>
+        <a href="login.php">Already a member? Click here to login!</a></br>
+        <a href="stats.php">been here before? look at your stats!</a>
     </form>
 
     <?php
 
 
 
-
-
-
-
     include('dbconnect.php');
+    include('stats_script.php');
+    _stats("registration");
 
     function errors($errors_){
-        $date=date("d/m/y");
-        $time=time("hh [.:] MM space? meridian");
+        $date=date("Y-m-d h:i:sa");
+        $time=time("h:i:sa");
+        $ip_address = $_SERVER['REMOTE_ADDR'];
         $myfile= "error.txt";
         $file= fopen($myfile, "a");
-        $stringdata = $date." ".$time." ".$errors_."\n";
+        $stringdata = $date." ".$ip_address." ".$errors_."\n";
         fwrite($file,$stringdata);
       };
 
@@ -43,6 +43,7 @@
 
     if(empty($firstname) || empty($lastname) || empty($username) || empty($password)) {
         echo "Please fill in all the boxes";
+        errors("please fill in all the boxes");
 
 
     }else{
@@ -51,7 +52,7 @@
 
 	if(strlen($password) < 6){
 		echo "Please enter a password that has six or more characters.";
-    errors("problem");
+    errors("password is too short");
 
 	}else{
 
@@ -76,6 +77,7 @@
 
     if(!$rs) {
         die("Database connection failed: " . mysqli_error($dbconnect));
+        errors("database connection failed");
     }
 
 
