@@ -1,7 +1,5 @@
-
-24/03/21 1616578414 ::1 password is too short
-24/03/21 1616578607 ::1 password is too short
-2021-03-24 10:38:34am 1616578714 ::1 password is too short
-2021-03-24 10:39:52am ::1 password is too short
-2021-03-27 08:54:20pm ::1 password is too short
-2021-03-27 08:54:55pm ::1 password is too short
+2021-03-31 04:29:53pm ::1 invalid email
+2021-03-31 04:30:35pm ::1 invalid email
+2021-03-31 05:25:34pm ::1 password is too short
+2021-03-31 06:00:12pm ::1 username or password incorrect
+2021-03-31 06:01:18pm ::1 password incorrect

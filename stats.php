@@ -10,9 +10,9 @@
 
 
 include('dbconnect.php');
-include('stats_script.php');
+include('scripts.php');
 
-show_stats();
+show_stats();//show stats just echos out all the stat files 
 
 	
     
